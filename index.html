@@ -24,8 +24,9 @@
             top: 10px; /* Distance from the top */
             left: 10px; /* Distance from the left */
             color: white; /* White text color */
-            font-size: 16px; /* Font size */
+            font-size: 32px; /* Increase font size */
             z-index: 10; /* Ensure message is above other elements */
+            white-space: nowrap; /* Prevent text from wrapping */
         }
     </style>
 </head>
@@ -40,7 +41,8 @@
         const video = document.getElementById('myVideo');
 
         // Unmute the video when clicked
-        video.addEventListener('click', () => {
+        video.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent event from bubbling up
             video.muted = false; // Unmute the video
         });
     </script>
