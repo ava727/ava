@@ -24,7 +24,7 @@
             top: 10px; /* Distance from the top */
             left: 10px; /* Distance from the left */
             color: white; /* White text color */
-            font-size: 32px; /* Increase font size */
+            font-size: 48px; /* Increased font size */
             z-index: 10; /* Ensure message is above other elements */
             white-space: nowrap; /* Prevent text from wrapping */
         }
@@ -42,8 +42,12 @@
 
         // Unmute the video when clicked
         video.addEventListener('click', (event) => {
-            event.stopPropagation(); // Prevent event from bubbling up
             video.muted = false; // Unmute the video
+        });
+
+        // Prevent the default action of pausing/resuming on left click
+        video.addEventListener('mousedown', (event) => {
+            event.preventDefault(); // Prevent default click action
         });
     </script>
 </body>
