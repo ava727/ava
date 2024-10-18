@@ -29,23 +29,57 @@
             padding: 5px; /* Padding for the text */
             border-radius: 5px; /* Rounded corners */
         }
+        .unmute-button {
+            position: absolute; /* Position the button absolutely */
+            bottom: 30px; /* 30px from the bottom */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Adjust for centering */
+            background-color: rgba(255, 0, 0, 0.8); /* Semi-transparent red background */
+            color: white; /* White text color */
+            font-size: 30px; /* Larger font size */
+            padding: 10px 20px; /* Padding for the button */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            display: none; /* Hide by default */
+        }
     </style>
 </head>
 <body>
     <div class="overlay">Click to unmute</div>
-    <video id="myVideo" autoplay muted controls>
+    <video id="myVideo" autoplay muted>
         <source src="vid.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
+    <button class="unmute-button" id="unmuteButton">Click to unmute</button>
 
     <script>
         const video = document.getElementById('myVideo');
         const overlay = document.querySelector('.overlay');
+        const unmuteButton = document.getElementById('unmuteButton');
 
         video.addEventListener('click', () => {
             video.muted = false; // Unmute the video
             video.volume = 1; // Set volume to 100%
             overlay.style.display = 'none'; // Hide the overlay text
+            unmuteButton.style.display = 'none'; // Hide the custom unmute button
+        });
+
+        // Show the unmute button when the video is clicked
+        video.addEventListener('mouseenter', () => {
+            unmuteButton.style.display = 'block'; // Show the button on hover
+        });
+
+        video.addEventListener('mouseleave', () => {
+            unmuteButton.style.display = 'none'; // Hide the button when not hovered
+        });
+
+        // Unmute video when the button is clicked
+        unmuteButton.addEventListener('click', () => {
+            video.muted = false; // Unmute the video
+            video.volume = 1; // Set volume to 100%
+            overlay.style.display = 'none'; // Hide the overlay text
+            unmuteButton.style.display = 'none'; // Hide the custom unmute button
         });
     </script>
 </body>
