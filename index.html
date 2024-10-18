@@ -1,42 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>test9g</title>
-	<style>
-		body {
-
-			background-color: #090c10;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			height: 100vh;
-		}
-
-		.filter-blur {
-			filter: url(#blur-and-scale);
-		}
-
-		video {
-			width: 80%;
-			margin: 20px auto;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Video</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full height of the viewport */
+            margin: 0; /* Remove default margin */
+            background-color: black; /* Set background to black */
+        }
+        video {
+            width: 80%; /* Set width to 80% of the viewport */
+            height: auto; /* Maintain aspect ratio */
+            max-height: 80%; /* Limit the maximum height */
+        }
+    </style>
 </head>
-
 <body>
-	<video autoplay loop muted controls class="filter-blur">
-		<source src="vid.mp4" type="video/mp4">
-	</video>
-	<svg width="0" height="0">
-		<filter id="blur-and-scale" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
-			<feGaussianBlur in="SourceGraphic" stdDeviation="30" result="blurred" />
-			<feColorMatrix type="saturate" in="blurred" values="4" />
-			<feComposite in="SourceGraphic" operator="over" />
-		</filter>
-	</svg>
+    <video controls>
+        <source src="vid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 </body>
-
 </html>
