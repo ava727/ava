@@ -7,7 +7,6 @@
     <style>
         body {
             display: flex;
-            flex-direction: column; /* Stack video and button */
             justify-content: center;
             align-items: center;
             height: 100vh; /* Full height of the viewport */
@@ -19,52 +18,19 @@
             height: auto; /* Maintain aspect ratio */
             max-height: 90%; /* Limit the maximum height */
         }
-        button {
-            margin-top: 20px; /* Space between video and button */
-            padding: 10px 20px; /* Button padding */
-            background-color: #fff; /* Button color */
-            border: none; /* Remove border */
-            cursor: pointer; /* Pointer on hover */
-        }
-        .play-pause {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 15px;
-            color: black;
-            background-color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
     </style>
 </head>
 <body>
-    <video id="myVideo" autoplay muted>
+    <video id="myVideo" autoplay muted loop>
         <source src="vid.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-    <button id="unmuteButton">Unmute</button>
-    <button id="playPauseButton" class="play-pause">Pause</button>
 
     <script>
         const video = document.getElementById('myVideo');
-        const unmuteButton = document.getElementById('unmuteButton');
-        const playPauseButton = document.getElementById('playPauseButton');
 
-        unmuteButton.addEventListener('click', () => {
-            video.muted = false; // Unmute the video
-            unmuteButton.style.display = 'none'; // Hide the button after clicking
-        });
-
-        playPauseButton.addEventListener('click', () => {
-            if (video.paused) {
-                video.play(); // Play the video
-                playPauseButton.textContent = 'Pause'; // Update button text
-            } else {
-                video.pause(); // Pause the video
-                playPauseButton.textContent = 'Play'; // Update button text
-            }
-        });
+        // Remove the default controls
+        video.controls = false; // Optional: if you want to ensure no default controls appear
     </script>
 </body>
 </html>
