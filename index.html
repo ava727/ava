@@ -7,41 +7,45 @@
     <style>
         body {
             display: flex;
-            flex-direction: column; /* Stack video and button */
             justify-content: center;
             align-items: center;
             height: 100vh; /* Full height of the viewport */
             margin: 0; /* Remove default margin */
             background-color: black; /* Set background to black */
+            position: relative; /* Set position relative for text positioning */
         }
         video {
             width: 100%; /* Set width to 100% of the viewport */
             height: auto; /* Maintain aspect ratio */
             max-height: 90%; /* Limit the maximum height */
         }
-        button {
-            margin-top: 20px; /* Space between video and button */
-            padding: 10px 20px; /* Button padding */
-            background-color: #fff; /* Button color */
-            border: none; /* Remove border */
-            cursor: pointer; /* Pointer on hover */
+        .overlay {
+            position: absolute; /* Position overlay absolutely */
+            top: 20px; /* 20px from the top */
+            left: 20px; /* 20px from the left */
+            color: white; /* White text color */
+            font-size: 24px; /* Font size */
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            padding: 5px; /* Padding for the text */
+            border-radius: 5px; /* Rounded corners */
         }
     </style>
 </head>
 <body>
+    <div class="overlay">Click to unmute</div>
     <video id="myVideo" autoplay muted controls>
         <source src="vid.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-    <button id="unmuteButton">Unmute</button>
 
     <script>
         const video = document.getElementById('myVideo');
-        const button = document.getElementById('unmuteButton');
+        const overlay = document.querySelector('.overlay');
 
-        button.addEventListener('click', () => {
+        video.addEventListener('click', () => {
             video.muted = false; // Unmute the video
-            button.style.display = 'none'; // Hide the button after clicking
+            video.volume = 1; // Set volume to 100%
+            overlay.style.display = 'none'; // Hide the overlay text
         });
     </script>
 </body>
