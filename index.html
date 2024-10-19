@@ -53,8 +53,9 @@
         function startVideo() {
             enterMessage.style.display = 'none'; // Hide the enter message
             video.style.display = 'block'; // Show the video
-            video.volume = 0.5; // Set volume to 50%
+            video.volume = 0.5; // Set volume to 50% before playing
             video.play(); // Play the video
+            video.volume = 0.5; // Set volume to 50% again after playing to ensure change
         }
 
         // Make clicking anywhere on the screen start the video
