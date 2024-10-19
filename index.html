@@ -39,7 +39,6 @@
 </head>
 <body>
     <div class="enter-message" id="enterMessage">Click to enter</div>
-    <div class="message" id="unmuteMessage">Click to unmute</div>
     <video id="myVideo" loop>
         <source src="vid.mp4" type="video/mp4">
         Your browser does not support the video tag.
@@ -48,7 +47,6 @@
     <script>
         const video = document.getElementById('myVideo');
         const enterMessage = document.getElementById('enterMessage');
-        const unmuteMessage = document.getElementById('unmuteMessage');
 
         // Function to start the video
         function startVideo() {
@@ -56,27 +54,20 @@
             video.style.display = 'block'; // Show the video
             video.volume = 1.0; // Set volume to 100%
             video.play(); // Play the video
-            unmuteMessage.style.display = 'block'; // Show the "Click to unmute" message
         }
 
         // Make clicking anywhere on the screen start the video
         document.body.addEventListener('click', (event) => {
-            if (!video.playing) { // Make sure it only starts once
+            if (video.paused) { // Check if video is paused
                 startVideo();
             }
         });
 
         // Make the Enter key trigger starting the video
         document.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter' && !video.playing) {
+            if (event.key === 'Enter' && video.paused) {
                 startVideo();
             }
-        });
-
-        // Unmute the video and hide the "Click to unmute" message on video click
-        video.addEventListener('click', () => {
-            video.muted = false; // Unmute the video
-            unmuteMessage.style.display = 'none'; // Hide the "Click to unmute" message
         });
     </script>
 </body>
