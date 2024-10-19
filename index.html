@@ -30,11 +30,16 @@
             font-size: 48px; /* Increased font size */
             z-index: 10; /* Ensure message is above other elements */
             white-space: nowrap; /* Prevent text from wrapping */
+            transition: opacity 0.5s ease; /* Add smooth fade-out effect */
+        }
+        .hidden {
+            opacity: 0; /* Make the message invisible */
+            pointer-events: none; /* Prevent the hidden element from being interacted with */
         }
     </style>
 </head>
 <body>
-    <div class="message">Click anywhere to play with sound</div>
+    <div class="message" id="message">Click to unmute</div>
     <video id="myVideo" autoplay loop>
         <source src="vid.mp4" type="video/mp4">
         Your browser does not support the video tag.
@@ -42,11 +47,12 @@
 
     <script>
         const video = document.getElementById('myVideo');
+        const message = document.getElementById('message');
 
-        // Play video with sound after user clicks anywhere on the page
-        document.body.addEventListener('click', () => {
+        // Unmute the video and hide the message when the video is clicked
+        video.addEventListener('click', () => {
             video.muted = false; // Unmute the video
-            video.play(); // Ensure the video plays
+            message.classList.add('hidden'); // Hide the "Click to unmute" message
         });
     </script>
 </body>
