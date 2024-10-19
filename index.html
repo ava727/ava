@@ -24,7 +24,6 @@
             color: white;
             font-size: 48px;
             white-space: nowrap;
-            cursor: pointer;
         }
         .message {
             position: absolute;
@@ -51,31 +50,33 @@
         const enterMessage = document.getElementById('enterMessage');
         const unmuteMessage = document.getElementById('unmuteMessage');
 
-        // Function to start the video and remove the enter screen
+        // Function to start the video
         function startVideo() {
             enterMessage.style.display = 'none'; // Hide the enter message
             video.style.display = 'block'; // Show the video
-            video.muted = false; // Ensure the video is unmuted
+            video.volume = 1.0; // Set volume to 100%
             video.play(); // Play the video
             unmuteMessage.style.display = 'block'; // Show the "Click to unmute" message
         }
 
-        // Click anywhere on the screen to enter
-        document.body.addEventListener('click', () => {
-            startVideo();
-        });
-
-        // Press the Enter key to enter
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter') {
+        // Make clicking anywhere on the screen start the video
+        document.body.addEventListener('click', (event) => {
+            if (!video.playing) { // Make sure it only starts once
                 startVideo();
             }
         });
 
-        // Unmute the video and hide "Click to unmute" text when the video is clicked
+        // Make the Enter key trigger starting the video
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' && !video.playing) {
+                startVideo();
+            }
+        });
+
+        // Unmute the video and hide the "Click to unmute" message on video click
         video.addEventListener('click', () => {
             video.muted = false; // Unmute the video
-            unmuteMessage.style.display = 'none'; // Hide the unmute message
+            unmuteMessage.style.display = 'none'; // Hide the "Click to unmute" message
         });
     </script>
 </body>
