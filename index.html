@@ -18,6 +18,13 @@
             width: 100%;
             height: auto;
             max-height: 90%;
+            display: none; /* Initially hide the video */
+        }
+        .enter-message {
+            color: white;
+            font-size: 48px;
+            white-space: nowrap;
+            cursor: pointer;
         }
         .message {
             position: absolute;
@@ -27,22 +34,35 @@
             font-size: 48px;
             z-index: 10;
             white-space: nowrap;
+            display: none; /* Initially hidden, shown when video starts */
         }
     </style>
 </head>
 <body>
-    <div class="message">Click to unmute</div>
-    <video id="myVideo" autoplay muted loop>
+    <div class="enter-message" id="enterMessage">Click to enter</div>
+    <div class="message" id="unmuteMessage">Click to unmute</div>
+    <video id="myVideo" muted loop>
         <source src="vid.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
     <script>
         const video = document.getElementById('myVideo');
+        const enterMessage = document.getElementById('enterMessage');
+        const unmuteMessage = document.getElementById('unmuteMessage');
 
-        // Unmute the video when clicked
+        // When the user clicks "Click to enter"
+        enterMessage.addEventListener('click', () => {
+            enterMessage.style.display = 'none'; // Hide the enter message
+            video.style.display = 'block'; // Show the video
+            video.play(); // Play the video
+            unmuteMessage.style.display = 'block'; // Show the "Click to unmute" message
+        });
+
+        // Unmute the video and hide "Click to unmute" text when the video is clicked
         video.addEventListener('click', () => {
             video.muted = false; // Unmute the video
+            unmuteMessage.style.display = 'none'; // Hide the unmute message
         });
     </script>
 </body>
