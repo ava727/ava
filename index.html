@@ -26,18 +26,18 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Wrapper to center flag and buttons */
-        .wrapper {
+        /* Container to group the flag and buttons */
+        .group-container {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        /* Set fixed dimensions and position for the trans flag */
+        /* Fixed size and position for the trans flag */
         .trans-logo {
             width: 600px;
             height: 300px; /* Fixed height */
-            margin-bottom: 20px; /* Adjust the spacing between the flag and buttons */
+            margin-bottom: 20px; /* Space between flag and buttons */
         }
 
         /* Center container for buttons */
@@ -106,9 +106,9 @@
     </style>
 </head>
 <body>
-    <!-- Wrapper to center flag and buttons -->
-    <div class="wrapper">
-        <!-- Trans flag centered and positioned above buttons with fixed size -->
+    <!-- Group container to center the flag and buttons together -->
+    <div class="group-container">
+        <!-- Trans flag positioned above buttons -->
         <img src="trans-logo.png" alt="Trans Logo" class="trans-logo">
 
         <!-- Center container for buttons -->
