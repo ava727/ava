@@ -26,29 +26,25 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Center container for all buttons */
+        /* Center container for layout */
         .center-container {
             display: flex;
             align-items: center;
-            gap: 50px; /* Spacing between the two button groups */
+            gap: 50px;
+            color: white;
         }
 
-        /* Flexbox container for each button with its logo */
+        /* Button container for each logo+button pair */
         .button-container {
             display: flex;
             align-items: center;
             gap: 10px; /* Space between logo and button */
+            text-align: center;
         }
 
-        /* Resized BlueSky logo */
+        /* Logo styling */
         .logo {
-            width: 40px; /* Smaller width for logo */
-            height: auto;
-        }
-
-        /* Resized Bleh-cat logo */
-        .cat-logo {
-            width: 40px; /* Smaller width for Bleh-cat logo */
+            width: 40px; /* Smaller size for icon look */
             height: auto;
         }
 
@@ -63,7 +59,9 @@
             text-decoration: none;
             transition: background-color 0.3s ease, color 0.3s ease;
             border-radius: 8px;
-            display: inline-block;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         /* Button hover effect */
@@ -75,15 +73,15 @@
 </head>
 <body>
     <div class="center-container">
-        <!-- BlueSky Button with logo aligned to the left -->
+        <!-- BlueSky Button with icon-style logo -->
         <div class="button-container">
             <img src="bsky-logo.png" alt="BlueSky Logo" class="logo">
             <a href="https://bsky.app/profile/ava.rip" class="action-button" target="_blank">bluesky</a>
         </div>
 
-        <!-- Jumpscares Button with Bleh-cat logo aligned to the left -->
+        <!-- Jumpscares Button with icon-style logo -->
         <div class="button-container">
-            <img src="bleh-cat.png" alt="Bleh Cat Logo" class="cat-logo">
+            <img src="bleh-cat.png" alt="Bleh Cat Logo" class="logo">
             <a href="vid.mp4" class="action-button" target="_blank">top 5 scariest jumpscares</a>
         </div>
     </div>
