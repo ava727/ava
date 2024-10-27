@@ -11,7 +11,7 @@
             margin: 0;
             height: 100vh;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
             background: linear-gradient(45deg, #00c6ff, #8a2be2, #0072ff, #8a2be2);
             background-size: 300% 300%;
@@ -26,29 +26,31 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Container for the flag */
-        .flag-container {
+        /* Container to vertically and horizontally center the entire content */
+        .group-container {
             display: flex;
-            justify-content: center;
-            margin-bottom: 20px; /* Space below flag for separation */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* Centers both flag and buttons vertically */
+            height: 100vh;
         }
 
-        /* Centered flag */
+        /* Centered flag with some margin below */
         .trans-logo {
             width: 600px;
             height: 300px;
+            margin-bottom: 20px; /* Space below the flag */
         }
 
-        /* Container for the buttons */
+        /* Container for buttons to center horizontally */
         .button-container {
             display: flex;
             justify-content: center;
-            align-items: center;
-            gap: 40px;
+            gap: 40px; /* Space between buttons */
             color: white;
         }
 
-        /* Styling for each button container */
+        /* Button styling */
         .button-wrapper {
             display: flex;
             align-items: center;
@@ -69,7 +71,7 @@
             margin-right: 10px;
         }
 
-        /* Button styling */
+        /* Action button styling */
         .action-button {
             background-color: transparent;
             border: 2px solid #fff;
@@ -84,7 +86,7 @@
             align-items: center;
         }
 
-        /* Button hover and scale effect */
+        /* Hover and scale effect for buttons */
         .action-button:hover {
             background-color: white;
             color: #0072ff;
@@ -105,29 +107,30 @@
     </style>
 </head>
 <body>
-    <!-- Centered flag container -->
-    <div class="flag-container">
+    <!-- Group container to vertically center both flag and buttons together -->
+    <div class="group-container">
+        <!-- Centered trans flag -->
         <img src="trans-logo.png" alt="Trans Logo" class="trans-logo">
-    </div>
 
-    <!-- Centered button container -->
-    <div class="button-container">
-        <!-- BlueSky Button with logo -->
-        <div class="button-wrapper">
-            <img src="bsky-logo.png" alt="BlueSky Logo" class="logo">
-            <a href="https://bsky.app/profile/ava.rip" class="action-button" target="_blank">Bluesky</a>
-        </div>
+        <!-- Centered button container -->
+        <div class="button-container">
+            <!-- BlueSky Button with logo -->
+            <div class="button-wrapper">
+                <img src="bsky-logo.png" alt="BlueSky Logo" class="logo">
+                <a href="https://bsky.app/profile/ava.rip" class="action-button" target="_blank">Bluesky</a>
+            </div>
 
-        <!-- Twitter Button with logo -->
-        <div class="button-wrapper">
-            <img src="twitter-logo.png" alt="Twitter Logo" class="logo">
-            <a href="https://x.com/ava_lol19" class="action-button" target="_blank">Twitter</a>
-        </div>
+            <!-- Twitter Button with logo -->
+            <div class="button-wrapper">
+                <img src="twitter-logo.png" alt="Twitter Logo" class="logo">
+                <a href="https://x.com/ava_lol19" class="action-button" target="_blank">Twitter</a>
+            </div>
 
-        <!-- Jumpscares Button with logo -->
-        <div class="button-wrapper">
-            <img src="bleh-cat.png" alt="Bleh Cat Logo" class="logo">
-            <a href="vid.mp4" class="action-button" target="_blank">top 5 scariest jumpscares</a>
+            <!-- Jumpscares Button with logo -->
+            <div class="button-wrapper">
+                <img src="bleh-cat.png" alt="Bleh Cat Logo" class="logo">
+                <a href="vid.mp4" class="action-button" target="_blank">top 5 scariest jumpscares</a>
+            </div>
         </div>
     </div>
 </body>
