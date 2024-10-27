@@ -11,6 +11,7 @@
             margin: 0;
             height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             background: linear-gradient(45deg, #00c6ff, #8a2be2, #0072ff, #8a2be2);
@@ -24,6 +25,13 @@
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
+        }
+
+        /* Trans logo styling (centered) */
+        .trans-logo {
+            width: 120px; /* Adjusted size for visibility */
+            height: auto;
+            margin-bottom: 20px; /* Space between logo and buttons */
         }
 
         /* Center container for layout */
@@ -71,6 +79,9 @@
     </style>
 </head>
 <body>
+    <!-- Trans logo above the buttons -->
+    <img src="trans-logo.png" alt="Trans Logo" class="trans-logo">
+
     <div class="center-container">
         <!-- BlueSky Button with logo -->
         <div class="button-container">
