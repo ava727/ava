@@ -17,6 +17,7 @@
             background-size: 300% 300%;
             animation: gradientAnimation 10s ease infinite;
             font-family: Arial, sans-serif;
+            flex-direction: column; /* Stack content vertically */
         }
 
         /* Gradient animation keyframes */
@@ -26,18 +27,11 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Container for centering content vertically and horizontally */
-        .content-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* Trans logo styling */
+        /* Position the trans logo higher on the page */
         .trans-logo {
             width: 600px;
             height: auto;
-            margin-bottom: 20px; /* Space between flag and buttons */
+            margin-bottom: 50px; /* Creates space between flag and centered buttons */
         }
 
         /* Center container for buttons */
@@ -65,7 +59,7 @@
 
         /* Logo styling for button icons */
         .logo {
-            width: 40px; /* Increased icon size */
+            width: 40px;
             height: 40px;
             margin-right: 10px;
         }
@@ -106,28 +100,27 @@
     </style>
 </head>
 <body>
-    <div class="content-wrapper">
-        <!-- Trans flag centered above the buttons -->
-        <img src="trans-logo.png" alt="Trans Logo" class="trans-logo">
+    <!-- Trans flag positioned higher on the page and centered horizontally -->
+    <img src="trans-logo.png" alt="Trans Logo" class="trans-logo">
 
-        <div class="center-container">
-            <!-- BlueSky Button with logo -->
-            <div class="button-container">
-                <img src="bsky-logo.png" alt="BlueSky Logo" class="logo">
-                <a href="https://bsky.app/profile/ava.rip" class="action-button" target="_blank">Bluesky</a>
-            </div>
+    <!-- Center container for vertically and horizontally centered buttons -->
+    <div class="center-container">
+        <!-- BlueSky Button with logo -->
+        <div class="button-container">
+            <img src="bsky-logo.png" alt="BlueSky Logo" class="logo">
+            <a href="https://bsky.app/profile/ava.rip" class="action-button" target="_blank">Bluesky</a>
+        </div>
 
-            <!-- Twitter Button with logo -->
-            <div class="button-container">
-                <img src="twitter-logo.png" alt="Twitter Logo" class="logo">
-                <a href="https://x.com/ava_lol19" class="action-button" target="_blank">Twitter</a>
-            </div>
+        <!-- Twitter Button with logo -->
+        <div class="button-container">
+            <img src="twitter-logo.png" alt="Twitter Logo" class="logo">
+            <a href="https://x.com/ava_lol19" class="action-button" target="_blank">Twitter</a>
+        </div>
 
-            <!-- Jumpscares Button with logo -->
-            <div class="button-container">
-                <img src="bleh-cat.png" alt="Bleh Cat Logo" class="logo">
-                <a href="vid.mp4" class="action-button" target="_blank">top 5 scariest jumpscares</a>
-            </div>
+        <!-- Jumpscares Button with logo -->
+        <div class="button-container">
+            <img src="bleh-cat.png" alt="Bleh Cat Logo" class="logo">
+            <a href="vid.mp4" class="action-button" target="_blank">top 5 scariest jumpscares</a>
         </div>
     </div>
 </body>
