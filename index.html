@@ -3,64 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>blehh</title>
+    <title>bluesky</title>
     <link rel="icon" type="image/png" href="bleh-cat.png">
     <style>
+        /* Fullscreen gradient animation */
         body {
             margin: 0;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: black;
+            background: linear-gradient(45deg, #00c6ff, #0072ff, #00c6ff);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+            font-family: Arial, sans-serif;
         }
-        video {
-            width: 100%;
-            height: 100%;
-            object-fit: fill; /* Ensures the video stretches to fill the whole screen */
-            display: none; /* Initially hide the video */
+
+        /* Gradient animation keyframes */
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
-        .enter-message {
+
+        /* Container for logo and button */
+        .center-container {
+            text-align: center;
             color: white;
-            font-size: 72px;
-            white-space: nowrap;
-            position: absolute;
+        }
+
+        /* BlueSky logo styling */
+        .logo {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        /* Button styling */
+        .bluesky-button {
+            background-color: transparent;
+            border: 2px solid #fff;
+            color: white;
+            padding: 10px 20px;
+            font-size: 24px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border-radius: 8px;
+        }
+
+        /* Button hover effect */
+        .bluesky-button:hover {
+            background-color: white;
+            color: #0072ff;
         }
     </style>
 </head>
 <body>
-    <div class="enter-message" id="enterMessage">Click to enter</div>
-    <video id="myVideo" loop>
-        <source src="vid.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <div class="center-container">
+        <!-- Logo image for BlueSky -->
+        <img src="bsky-logo.png" alt="BlueSky Logo" class="logo">
 
-    <script>
-        const video = document.getElementById('myVideo');
-        const enterMessage = document.getElementById('enterMessage');
-
-        // Function to start the video
-        function startVideo() {
-            enterMessage.style.display = 'none'; // Hide the enter message
-            video.style.display = 'block'; // Show the video
-            video.volume = 0.5; // Set volume to 50% before playing
-            video.play(); // Play the video
-            video.volume = 0.5; // Set volume to 50% again after playing to ensure change
-        }
-
-        // Make clicking anywhere on the screen start the video
-        document.body.addEventListener('click', (event) => {
-            if (video.paused) { // Check if video is paused
-                startVideo();
-            }
-        });
-
-        // Make the Enter key trigger starting the video
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter' && video.paused) {
-                startVideo();
-            }
-        });
-    </script>
+        <!-- Clickable button linked to the specified profile URL -->
+        <a href="https://bsky.app/profile/ava.rip" class="bluesky-button" target="_blank">bluesky</a>
+    </div>
 </body>
 </html>
