@@ -27,19 +27,21 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Trans logo styling (centered) */
+        /* Trans logo styling (centered and positioned above the buttons) */
         .trans-logo {
             width: 120px; /* Adjusted size for visibility */
             height: auto;
-            margin-bottom: 20px; /* Space between logo and buttons */
+            position: absolute;
+            top: 20%; /* Position it near the top-middle of the page */
         }
 
-        /* Center container for layout */
+        /* Center container for buttons layout */
         .center-container {
             display: flex;
             align-items: center;
             gap: 50px;
             color: white;
+            margin-top: 40px; /* Space between the logo and buttons */
         }
 
         /* Button container with logo+button pair styling */
@@ -49,7 +51,7 @@
             text-align: center;
         }
 
-        /* Logo styling, smaller to fit well with button */
+        /* Logo styling for button icons */
         .logo {
             width: 30px;
             height: 30px;
@@ -79,7 +81,7 @@
     </style>
 </head>
 <body>
-    <!-- Trans logo above the buttons -->
+    <!-- Trans logo centered near the top -->
     <img src="trans-logo.png" alt="Trans Logo" class="trans-logo">
 
     <div class="center-container">
