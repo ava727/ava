@@ -31,15 +31,15 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            position: relative;
         }
 
-        /* Move trans flag up without affecting button centering */
+        /* Move trans flag significantly higher to create space for buttons */
         .trans-logo {
             width: 600px;
             height: 300px; /* Fixed height */
-            position: relative;
-            top: -100px; /* Moves the flag up by 100px */
-            margin-bottom: -50px; /* Reduce margin to keep buttons in center */
+            position: absolute;
+            top: -250px; /* Moves the flag up */
         }
 
         /* Center container for buttons */
@@ -49,6 +49,8 @@
             align-items: center;
             gap: 40px; /* Space between buttons */
             color: white;
+            position: relative;
+            top: 150px; /* Ensure the buttons are centered on the page */
         }
 
         /* Button container with logo+button pair styling */
@@ -110,7 +112,7 @@
 <body>
     <!-- Group container to center the flag and buttons together -->
     <div class="group-container">
-        <!-- Trans flag positioned well above buttons -->
+        <!-- Trans flag positioned above buttons -->
         <img src="trans-logo.png" alt="Trans Logo" class="trans-logo">
 
         <!-- Center container for buttons -->
