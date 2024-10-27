@@ -14,9 +14,7 @@
             background-size: 300% 300%;
             animation: gradientAnimation 10s ease infinite;
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            overflow: hidden;
             position: relative;
         }
 
@@ -27,28 +25,25 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Container for precise positioning */
-        .content-container {
-            position: absolute;
-            top: 50%; /* Start positioning from center */
-            transform: translateY(-50%); /* Center vertically */
-            text-align: center;
-        }
-
-        /* Centered flag with manual spacing below */
+        /* Trans flag positioning */
         .trans-logo {
+            position: absolute;
+            top: 30%; /* Adjust this value to position the flag higher or lower */
+            left: 50%;
+            transform: translate(-50%, -50%);
             width: 600px;
             height: 300px;
-            margin-bottom: 20px; /* Adds space between flag and buttons */
         }
 
-        /* Horizontal centering for button container */
+        /* Button container positioning */
         .button-container {
+            position: absolute;
+            top: 60%; /* Adjust this value to move buttons up or down */
+            left: 50%;
+            transform: translate(-50%, -50%);
             display: flex;
-            justify-content: center;
-            gap: 40px; /* Space between buttons */
+            gap: 40px;
             color: white;
-            margin-top: 20px; /* Manual space below the flag */
         }
 
         /* Styling for each button wrapper */
@@ -108,30 +103,27 @@
     </style>
 </head>
 <body>
-    <!-- Manually centered container for flag and buttons -->
-    <div class="content-container">
-        <!-- Trans flag -->
-        <img src="trans-logo.png" alt="Trans Logo" class="trans-logo">
+    <!-- Trans flag positioned manually -->
+    <img src="trans-logo.png" alt="Trans Logo" class="trans-logo">
 
-        <!-- Centered button container below the flag -->
-        <div class="button-container">
-            <!-- BlueSky Button with logo -->
-            <div class="button-wrapper">
-                <img src="bsky-logo.png" alt="BlueSky Logo" class="logo">
-                <a href="https://bsky.app/profile/ava.rip" class="action-button" target="_blank">Bluesky</a>
-            </div>
+    <!-- Button container positioned manually below the flag -->
+    <div class="button-container">
+        <!-- BlueSky Button with logo -->
+        <div class="button-wrapper">
+            <img src="bsky-logo.png" alt="BlueSky Logo" class="logo">
+            <a href="https://bsky.app/profile/ava.rip" class="action-button" target="_blank">Bluesky</a>
+        </div>
 
-            <!-- Twitter Button with logo -->
-            <div class="button-wrapper">
-                <img src="twitter-logo.png" alt="Twitter Logo" class="logo">
-                <a href="https://x.com/ava_lol19" class="action-button" target="_blank">Twitter</a>
-            </div>
+        <!-- Twitter Button with logo -->
+        <div class="button-wrapper">
+            <img src="twitter-logo.png" alt="Twitter Logo" class="logo">
+            <a href="https://x.com/ava_lol19" class="action-button" target="_blank">Twitter</a>
+        </div>
 
-            <!-- Jumpscares Button with logo -->
-            <div class="button-wrapper">
-                <img src="bleh-cat.png" alt="Bleh Cat Logo" class="logo">
-                <a href="vid.mp4" class="action-button" target="_blank">top 5 scariest jumpscares</a>
-            </div>
+        <!-- Jumpscares Button with logo -->
+        <div class="button-wrapper">
+            <img src="bleh-cat.png" alt="Bleh Cat Logo" class="logo">
+            <a href="vid.mp4" class="action-button" target="_blank">top 5 scariest jumpscares</a>
         </div>
     </div>
 </body>
