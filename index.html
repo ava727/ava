@@ -9,10 +9,10 @@
         /* Fullscreen moving gradient background */
         body {
             margin: 0;
-            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            min-height: 100vh; /* Ensure it takes full height of viewport */
             background: linear-gradient(45deg, #00c6ff, #8a2be2, #0072ff, #8a2be2);
             background-size: 300% 300%;
             animation: gradientAnimation 10s ease infinite;
@@ -26,31 +26,29 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Container to vertically and horizontally center the entire content */
+        /* Container for both the flag and buttons, centered */
         .group-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center; /* Centers both flag and buttons vertically */
-            height: 100vh;
         }
 
-        /* Centered flag with some margin below */
+        /* Centered flag with space below */
         .trans-logo {
             width: 600px;
             height: 300px;
-            margin-bottom: 20px; /* Space below the flag */
+            margin-bottom: 20px;
         }
 
-        /* Container for buttons to center horizontally */
+        /* Center container for buttons */
         .button-container {
             display: flex;
             justify-content: center;
-            gap: 40px; /* Space between buttons */
+            gap: 40px;
             color: white;
         }
 
-        /* Button styling */
+        /* Styling for each button container */
         .button-wrapper {
             display: flex;
             align-items: center;
@@ -71,7 +69,7 @@
             margin-right: 10px;
         }
 
-        /* Action button styling */
+        /* Button styling */
         .action-button {
             background-color: transparent;
             border: 2px solid #fff;
@@ -86,7 +84,7 @@
             align-items: center;
         }
 
-        /* Hover and scale effect for buttons */
+        /* Button hover and scale effect */
         .action-button:hover {
             background-color: white;
             color: #0072ff;
@@ -107,9 +105,9 @@
     </style>
 </head>
 <body>
-    <!-- Group container to vertically center both flag and buttons together -->
+    <!-- Group container to center both flag and buttons together -->
     <div class="group-container">
-        <!-- Centered trans flag -->
+        <!-- Trans flag positioned above buttons -->
         <img src="trans-logo.png" alt="Trans Logo" class="trans-logo">
 
         <!-- Centered button container -->
