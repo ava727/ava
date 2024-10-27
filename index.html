@@ -26,31 +26,30 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Container for the button and logo group */
+        /* Center container for all buttons */
         .center-container {
             display: flex;
             align-items: center;
-            gap: 50px; /* Spacing between buttons */
-            color: white;
+            gap: 50px; /* Spacing between the two button groups */
         }
 
-        /* Button container */
+        /* Flexbox container for each button with its logo */
         .button-container {
-            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Space between logo and button */
         }
 
-        /* BlueSky logo styling */
+        /* Resized BlueSky logo */
         .logo {
-            width: 100px; /* Adjusted size for BlueSky logo */
+            width: 40px; /* Smaller width for logo */
             height: auto;
-            margin-bottom: 10px;
         }
 
-        /* Bleh-cat logo styling */
+        /* Resized Bleh-cat logo */
         .cat-logo {
-            width: 80px; /* Adjusted size for Bleh-cat logo */
+            width: 40px; /* Smaller width for Bleh-cat logo */
             height: auto;
-            margin-bottom: 10px;
         }
 
         /* Button styling */
@@ -76,13 +75,13 @@
 </head>
 <body>
     <div class="center-container">
-        <!-- BlueSky Button with logo -->
+        <!-- BlueSky Button with logo aligned to the left -->
         <div class="button-container">
             <img src="bsky-logo.png" alt="BlueSky Logo" class="logo">
             <a href="https://bsky.app/profile/ava.rip" class="action-button" target="_blank">bluesky</a>
         </div>
 
-        <!-- Jumpscares Button with resized logo -->
+        <!-- Jumpscares Button with Bleh-cat logo aligned to the left -->
         <div class="button-container">
             <img src="bleh-cat.png" alt="Bleh Cat Logo" class="cat-logo">
             <a href="vid.mp4" class="action-button" target="_blank">top 5 scariest jumpscares</a>
