@@ -17,7 +17,6 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 20px;
             color: white;
             overflow: hidden;
         }
@@ -27,30 +26,23 @@
             50% { background-position: 100% 50%; }
         }
 
+        /* Move the trans flag up */
         .trans-logo {
             width: 600px;
             height: 300px;
-            margin-top: 20px;
+            margin-top: 40px;
+            margin-bottom: auto; /* Pushes the buttons to center */
         }
 
+        /* Center the button container in the middle of the screen */
         .button-container {
             display: flex;
             gap: 40px;
-        }
-
-        .button-wrapper {
-            display: flex;
+            justify-content: center;
             align-items: center;
-            opacity: 0;
-            animation: fadeIn 0.5s ease forwards;
-            animation-delay: calc(0.2s * var(--order));
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
+        /* Button styling */
         .action-button {
             display: flex;
             align-items: center;
@@ -63,12 +55,24 @@
             color: white;
             transition: 0.3s;
             background-color: transparent;
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards;
         }
+
+        /* Button animation delay */
+        .action-button:nth-child(1) { animation-delay: 0.2s; }
+        .action-button:nth-child(2) { animation-delay: 0.4s; }
+        .action-button:nth-child(3) { animation-delay: 0.6s; }
 
         .action-button:hover {
             background-color: white;
             color: #0072ff;
             transform: scale(1.1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .logo {
@@ -78,24 +82,20 @@
     </style>
 </head>
 <body>
+    <!-- Trans flag positioned higher up -->
     <img src="trans-logo.png" alt="Trans Logo" class="trans-logo">
 
+    <!-- Button container centered in the middle of the screen -->
     <div class="button-container">
-        <div class="button-wrapper" style="--order: 1">
-            <a href="https://bsky.app/profile/ava.rip" class="action-button" target="_blank">
-                <img src="bsky-logo.png" alt="BlueSky Logo" class="logo"> Bluesky
-            </a>
-        </div>
-        <div class="button-wrapper" style="--order: 2">
-            <a href="https://x.com/ava_lol19" class="action-button" target="_blank">
-                <img src="twitter-logo.png" alt="Twitter Logo" class="logo"> Twitter
-            </a>
-        </div>
-        <div class="button-wrapper" style="--order: 3">
-            <a href="vid.mp4" class="action-button" target="_blank">
-                <img src="bleh-cat.png" alt="Bleh Cat Logo" class="logo"> top 5 scariest jumpscares
-            </a>
-        </div>
+        <a href="https://bsky.app/profile/ava.rip" class="action-button" target="_blank">
+            <img src="bsky-logo.png" alt="BlueSky Logo" class="logo"> Bluesky
+        </a>
+        <a href="https://x.com/ava_lol19" class="action-button" target="_blank">
+            <img src="twitter-logo.png" alt="Twitter Logo" class="logo"> Twitter
+        </a>
+        <a href="vid.mp4" class="action-button" target="_blank">
+            <img src="bleh-cat.png" alt="Bleh Cat Logo" class="logo"> top 5 scariest jumpscares
+        </a>
     </div>
 </body>
 </html>
