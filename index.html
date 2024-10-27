@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Styled Social Buttons</title>
+    <title>Centered Social Buttons with Trans Flag</title>
     <style>
         /* Moving Gradient Background */
         body {
@@ -25,14 +25,17 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Container for content */
+        /* Container for all content, centered */
         .content {
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        /* Trans Flag Image */
+        /* Enlarged Trans Flag Image */
         .trans-flag {
-            width: 300px;
+            width: 400px; /* Adjusted size */
             height: auto;
             margin-bottom: 20px;
         }
@@ -95,7 +98,7 @@
 <body>
 
     <div class="content">
-        <!-- Trans Flag Image -->
+        <!-- Enlarged Trans Flag Image positioned above the buttons -->
         <img src="trans-logo.png" alt="Trans Flag" class="trans-flag">
 
         <!-- Buttons with Icons -->
