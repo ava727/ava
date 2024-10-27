@@ -31,16 +31,16 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            position: relative; /* Allows flag to be positioned above buttons */
+            position: relative;
         }
 
-        /* Position the trans flag slightly above the buttons and offset to the left */
+        /* Keep trans flag in the current position above and left of the buttons */
         .trans-logo {
             width: 200px;
             height: auto;
             position: absolute;
-            top: -120px; /* Moves the flag above the buttons */
-            left: -260px; /* Offset to the left */
+            top: -120px; /* Keeps the flag above the buttons */
+            left: -260px; /* Keeps the flag offset to the left */
         }
 
         /* Center container for buttons */
@@ -50,6 +50,10 @@
             align-items: center;
             gap: 40px; /* Space between buttons */
             color: white;
+            position: absolute;
+            top: 50%; /* Centers the container vertically */
+            left: 50%; /* Centers the container horizontally */
+            transform: translate(-50%, -50%); /* Ensures true centering */
         }
 
         /* Button container with logo+button pair styling */
