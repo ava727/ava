@@ -26,22 +26,18 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Wrapper container to keep everything centered */
+        /* Wrapper to center flag and buttons */
         .wrapper {
             display: flex;
             flex-direction: column;
             align-items: center;
-            position: relative;
         }
 
-        /* Fixed position for the trans flag above the buttons */
+        /* Horizontally centered and positioned above the buttons */
         .trans-logo {
             width: 600px;
             height: auto;
-            position: absolute;
-            top: -150px; /* Adjusts the flag above the button container */
-            left: 50%;
-            transform: translateX(-50%); /* Centers the flag horizontally */
+            margin-bottom: 30px; /* Space between flag and buttons */
         }
 
         /* Center container for buttons */
@@ -51,7 +47,6 @@
             align-items: center;
             gap: 40px; /* Space between buttons */
             color: white;
-            margin-top: 150px; /* Ensures enough space between flag and buttons */
         }
 
         /* Button container with logo+button pair styling */
@@ -111,12 +106,12 @@
     </style>
 </head>
 <body>
-    <!-- Wrapper to keep elements aligned and positioned correctly -->
+    <!-- Wrapper to center flag and buttons -->
     <div class="wrapper">
-        <!-- Trans flag positioned slightly above the buttons -->
+        <!-- Trans flag centered and positioned above buttons -->
         <img src="trans-logo.png" alt="Trans Logo" class="trans-logo">
 
-        <!-- Center container for vertically and horizontally centered buttons -->
+        <!-- Center container for buttons -->
         <div class="center-container">
             <!-- BlueSky Button with logo -->
             <div class="button-container">
