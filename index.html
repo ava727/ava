@@ -6,122 +6,95 @@
     <title>welcome to ava's site</title>
     <link rel="icon" type="image/png" href="bleh-cat.png">
     <style>
-        /* Fullscreen moving gradient background */
         body {
             margin: 0;
             height: 100vh;
             background: linear-gradient(45deg, #00c6ff, #8a2be2, #0072ff, #8a2be2);
             background-size: 300% 300%;
-            animation: gradientAnimation 10s ease infinite;
+            animation: gradient 10s ease infinite;
             font-family: Arial, sans-serif;
-            overflow: hidden;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            flex-direction: column;
+            gap: 20px;
+            color: white;
+            overflow: hidden;
         }
 
-        /* Gradient animation keyframes */
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 50%; }
+        @keyframes gradient {
+            0%, 100% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
         }
 
-        /* Trans flag styling and positioning */
         .trans-logo {
             width: 600px;
             height: 300px;
-            margin-bottom: 30px; /* Creates space between flag and buttons */
+            margin-top: 20px;
         }
 
-        /* Button container styling */
         .button-container {
             display: flex;
             gap: 40px;
-            color: white;
-            justify-content: center;
-            align-items: center;
         }
 
-        /* Styling for each button wrapper */
         .button-wrapper {
             display: flex;
             align-items: center;
-            text-align: center;
             opacity: 0;
-            animation: popIn 0.5s ease forwards;
+            animation: fadeIn 0.5s ease forwards;
+            animation-delay: calc(0.2s * var(--order));
         }
 
-        /* Sequential delay for button appearance */
-        .button-wrapper:nth-child(1) { animation-delay: 0.2s; }
-        .button-wrapper:nth-child(2) { animation-delay: 0.4s; }
-        .button-wrapper:nth-child(3) { animation-delay: 0.6s; }
-
-        /* Logo styling for button icons */
-        .logo {
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Button styling */
         .action-button {
-            background-color: transparent;
-            border: 2px solid #fff;
-            color: white;
-            padding: 15px 25px;
-            font-size: 22px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-            border-radius: 8px;
             display: flex;
             align-items: center;
+            gap: 10px;
+            padding: 15px 25px;
+            border: 2px solid white;
+            border-radius: 8px;
+            font-size: 22px;
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+            background-color: transparent;
         }
 
-        /* Button hover and scale effect */
         .action-button:hover {
             background-color: white;
             color: #0072ff;
             transform: scale(1.1);
         }
 
-        /* Pop-in animation for buttons */
-        @keyframes popIn {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .logo {
+            width: 40px;
+            height: 40px;
         }
     </style>
 </head>
 <body>
-    <!-- Trans flag centered independently -->
     <img src="trans-logo.png" alt="Trans Logo" class="trans-logo">
 
-    <!-- Centered button container -->
     <div class="button-container">
-        <!-- BlueSky Button with logo -->
-        <div class="button-wrapper">
-            <img src="bsky-logo.png" alt="BlueSky Logo" class="logo">
-            <a href="https://bsky.app/profile/ava.rip" class="action-button" target="_blank">Bluesky</a>
+        <div class="button-wrapper" style="--order: 1">
+            <a href="https://bsky.app/profile/ava.rip" class="action-button" target="_blank">
+                <img src="bsky-logo.png" alt="BlueSky Logo" class="logo"> Bluesky
+            </a>
         </div>
-
-        <!-- Twitter Button with logo -->
-        <div class="button-wrapper">
-            <img src="twitter-logo.png" alt="Twitter Logo" class="logo">
-            <a href="https://x.com/ava_lol19" class="action-button" target="_blank">Twitter</a>
+        <div class="button-wrapper" style="--order: 2">
+            <a href="https://x.com/ava_lol19" class="action-button" target="_blank">
+                <img src="twitter-logo.png" alt="Twitter Logo" class="logo"> Twitter
+            </a>
         </div>
-
-        <!-- Jumpscares Button with logo -->
-        <div class="button-wrapper">
-            <img src="bleh-cat.png" alt="Bleh Cat Logo" class="logo">
-            <a href="vid.mp4" class="action-button" target="_blank">top 5 scariest jumpscares</a>
+        <div class="button-wrapper" style="--order: 3">
+            <a href="vid.mp4" class="action-button" target="_blank">
+                <img src="bleh-cat.png" alt="Bleh Cat Logo" class="logo"> top 5 scariest jumpscares
+            </a>
         </div>
     </div>
 </body>
