@@ -33,11 +33,13 @@
             align-items: center;
         }
 
-        /* Fixed size and position for the trans flag, moved further up */
+        /* Move trans flag up without affecting button centering */
         .trans-logo {
             width: 600px;
             height: 300px; /* Fixed height */
-            margin-bottom: 200px; /* Additional space between flag and buttons */
+            position: relative;
+            top: -100px; /* Moves the flag up by 100px */
+            margin-bottom: -50px; /* Reduce margin to keep buttons in center */
         }
 
         /* Center container for buttons */
