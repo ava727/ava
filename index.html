@@ -38,7 +38,7 @@
         .trans-logo {
             width: 600px;
             height: auto;
-            margin-bottom: 30px; /* Ensures the flag is above the buttons */
+            margin-bottom: 20px; /* Ensures the flag is above the buttons */
         }
 
         /* Center container for buttons */
@@ -55,7 +55,14 @@
             display: flex;
             align-items: center;
             text-align: center;
+            opacity: 0; /* Initially hidden for animation */
+            animation: popIn 0.5s ease forwards;
         }
+
+        /* Sequential delay for button appearance */
+        .button-container:nth-child(1) { animation-delay: 0.2s; }
+        .button-container:nth-child(2) { animation-delay: 0.4s; }
+        .button-container:nth-child(3) { animation-delay: 0.6s; }
 
         /* Logo styling for button icons */
         .logo {
@@ -69,20 +76,33 @@
             background-color: transparent;
             border: 2px solid #fff;
             color: white;
-            padding: 15px 25px; /* Moderate padding increase */
-            font-size: 22px; /* Slightly larger font size */
+            padding: 15px 25px;
+            font-size: 22px;
             cursor: pointer;
             text-decoration: none;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
             border-radius: 8px;
             display: flex;
             align-items: center;
         }
 
-        /* Button hover effect */
+        /* Button hover and scale effect */
         .action-button:hover {
             background-color: white;
             color: #0072ff;
+            transform: scale(1.1);
+        }
+
+        /* Pop-in animation for buttons */
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
