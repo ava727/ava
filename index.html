@@ -11,7 +11,7 @@
             margin: 0;
             height: 100vh;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             background: linear-gradient(45deg, #00c6ff, #8a2be2, #0072ff, #8a2be2);
             background-size: 300% 300%;
@@ -26,43 +26,41 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Container to group the flag and buttons */
-        .group-container {
+        /* Container for the flag */
+        .flag-container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center; /* Center vertically */
-            height: 100vh; /* Full height for vertical centering */
+            justify-content: center;
+            margin-bottom: 20px; /* Space below flag for separation */
         }
 
-        /* Adjust position for the trans flag without any margin */
+        /* Centered flag */
         .trans-logo {
             width: 600px;
             height: 300px;
         }
 
-        /* Center container for buttons */
-        .center-container {
+        /* Container for the buttons */
+        .button-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 40px; /* Space between buttons */
+            gap: 40px;
             color: white;
         }
 
-        /* Button container with logo+button pair styling */
-        .button-container {
+        /* Styling for each button container */
+        .button-wrapper {
             display: flex;
             align-items: center;
             text-align: center;
-            opacity: 0; /* Initially hidden for animation */
+            opacity: 0;
             animation: popIn 0.5s ease forwards;
         }
 
         /* Sequential delay for button appearance */
-        .button-container:nth-child(1) { animation-delay: 0.2s; }
-        .button-container:nth-child(2) { animation-delay: 0.4s; }
-        .button-container:nth-child(3) { animation-delay: 0.6s; }
+        .button-wrapper:nth-child(1) { animation-delay: 0.2s; }
+        .button-wrapper:nth-child(2) { animation-delay: 0.4s; }
+        .button-wrapper:nth-child(3) { animation-delay: 0.6s; }
 
         /* Logo styling for button icons */
         .logo {
@@ -107,30 +105,29 @@
     </style>
 </head>
 <body>
-    <!-- Group container to center the flag and buttons together -->
-    <div class="group-container">
-        <!-- Trans flag positioned above buttons -->
+    <!-- Centered flag container -->
+    <div class="flag-container">
         <img src="trans-logo.png" alt="Trans Logo" class="trans-logo">
+    </div>
 
-        <!-- Center container for buttons -->
-        <div class="center-container">
-            <!-- BlueSky Button with logo -->
-            <div class="button-container">
-                <img src="bsky-logo.png" alt="BlueSky Logo" class="logo">
-                <a href="https://bsky.app/profile/ava.rip" class="action-button" target="_blank">Bluesky</a>
-            </div>
+    <!-- Centered button container -->
+    <div class="button-container">
+        <!-- BlueSky Button with logo -->
+        <div class="button-wrapper">
+            <img src="bsky-logo.png" alt="BlueSky Logo" class="logo">
+            <a href="https://bsky.app/profile/ava.rip" class="action-button" target="_blank">Bluesky</a>
+        </div>
 
-            <!-- Twitter Button with logo -->
-            <div class="button-container">
-                <img src="twitter-logo.png" alt="Twitter Logo" class="logo">
-                <a href="https://x.com/ava_lol19" class="action-button" target="_blank">Twitter</a>
-            </div>
+        <!-- Twitter Button with logo -->
+        <div class="button-wrapper">
+            <img src="twitter-logo.png" alt="Twitter Logo" class="logo">
+            <a href="https://x.com/ava_lol19" class="action-button" target="_blank">Twitter</a>
+        </div>
 
-            <!-- Jumpscares Button with logo -->
-            <div class="button-container">
-                <img src="bleh-cat.png" alt="Bleh Cat Logo" class="logo">
-                <a href="vid.mp4" class="action-button" target="_blank">top 5 scariest jumpscares</a>
-            </div>
+        <!-- Jumpscares Button with logo -->
+        <div class="button-wrapper">
+            <img src="bleh-cat.png" alt="Bleh Cat Logo" class="logo">
+            <a href="vid.mp4" class="action-button" target="_blank">top 5 scariest jumpscares</a>
         </div>
     </div>
 </body>
