@@ -47,7 +47,7 @@ main {
 }
 
 .twitter-icon {
-    width: auto; /* Maintain aspect ratio */
+    width: auto; /* SVGs scale better with height only */
     height: 35px;
 }
 
@@ -66,6 +66,6 @@ footer {
     background-color: #333;
     color: #fff;
     position: fixed;
-    width: 100%;
+    width: 0;
     bottom: 0;
 }
