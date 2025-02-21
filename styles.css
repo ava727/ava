@@ -35,19 +35,19 @@ main {
     margin-bottom: 20px;
 }
 
-#social .social-icons img {
+.social-icons img {
     width: 30px;
     height: 30px;
     margin: 0 10px;
     transition: transform 0.3s ease;
 }
 
-#social .social-icons img:hover {
+.social-icons img:hover {
     transform: scale(1.1);
 }
 
 .twitter-icon {
-    width: 35px;
+    width: auto; /* Maintain aspect ratio */
     height: 35px;
 }
 
