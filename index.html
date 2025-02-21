@@ -3,59 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-            text-align: center;
-        }
-        nav {
-            background-color: #444;
-            color: #fff;
-            padding: 10px 20px;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        main {
-            padding: 20px;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 20px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
+    <title>Your Name - Bio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to My Website</h1>
+        <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+        <h1>Your Name</h1>
     </header>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-    </nav>
+    
     <main>
-        <h2>About Me</h2>
-        <p>This is a simple website created using HTML and CSS. You can add more content here as needed.</p>
+        <section id="bio">
+            <h2>About Me</h2>
+            <p>This is where you can describe yourself, your interests, and what you do.</p>
+        </section>
+        
+        <section id="social">
+            <h2>Social Links</h2>
+            <div class="social-icons">
+                <a href="https://instagram.com/yourusername"><img src="instagram.png" alt="Instagram"></a>
+                <a href="https://twitter.com/yourusername"><img src="twitter.png" alt="Twitter"></a>
+                <a href="https://linkedin.com/in/yourusername"><img src="linkedin.png" alt="LinkedIn"></a>
+            </div>
+        </section>
+        
+        <section id="quick-links">
+            <h2>Favorite Websites</h2>
+            <ul>
+                <li><a href="https://example.com">Website 1</a></li>
+                <li><a href="https://example.com">Website 2</a></li>
+                <li><a href="https://example.com">Website 3</a></li>
+            </ul>
+        </section>
     </main>
+    
     <footer>
-        <p>&copy; 2025 My Website</p>
+        <p>&copy; 2025 Your Name</p>
     </footer>
 </body>
 </html>
